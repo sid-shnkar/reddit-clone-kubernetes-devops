@@ -39,8 +39,11 @@ NodeJs To-do List app completely automated deployment using Jenkins, AWS EC2, Do
 ### Screenshots
 
 ![screenshot-1](pics/p1.png)
+&nbsp;&nbsp;&nbsp;&nbsp
 ![screenshot-2](pics/p2.png)
+&nbsp;&nbsp;&nbsp;&nbsp
 ![screenshot-3](pics/p3.png)
+&nbsp;&nbsp;&nbsp;&nbsp
 ![screenshot-4](pics/p4.png)
 ![screenshot-5](pics/p5.png)
 ![screenshot-6](pics/p6_service.png)
