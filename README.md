@@ -73,4 +73,89 @@ To get started with the project, follow these steps:
 **Note:** 
 * Make sure to enable port 3000 inbound traffic while creating the EC2 instance or edit the security group if you already have created it.
 
+* On CI server, for docker installation
 
+```sh
+sudo apt-get update
+```
+```sh
+sudo apt-get install docker.io -y
+```
+```sh
+sudo usermod -aG docker $USER && newgrp docker
+```
+
+* On Deployment server, for Kubectl and Minikube installation
+
+```sh
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+```
+```sh
+sudo install minikube-linux-amd64 /usr/local/bin/minikube 
+```
+```sh
+sudo snap install kubectl --classic
+```
+```sh
+minikube start --driver=docker
+```
+
+* For building the docker image from Dockerfile and pushing it to docker hub registry
+```sh
+docker . build -t sidshnkar/reddit-clone
+```
+```sh
+docker login
+```
+```sh
+docker push sidshnkar/reddit-clone
+```
+
+* On Deployment server, for deploying to Kubernetes
+
+```sh
+mkdir k8s
+nano Deployment.yml
+kubectl apply -f Deployment.yml
+```
+
+* To verify the deployments on kubernetes
+```sh
+kubectl get deployments
+```
+
+* Creating a service for our kubernetes deployment
+```sh
+nano Service.yml
+kubectl apply -f Service.yml
+kubectl get services
+```
+
+* For accessing the application that you have created with Deployment.yml from our linux server itself
+```sh
+minikube service reddit-clone-service — url
+curl -L http://192.168.49.2:31000
+```
+
+* For exposing our deployment to public
+```sh
+kubectl expose deployment reddit-clone-deployment --type=NodePort
+```
+* Do the port forwarding for Port 3000
+```sh
+kubectl port-forward svc/reddit-clone-service 3000:3000 –address 0.0.0.0 &
+```
+
+Now the reddit app clone can be accessed from http://EC2_INSTANCE_PUBLIC_IP_ADDRESS:3000
+
+* For enabling ingress from minikube
+```sh
+minikube addons enable ingress
+```
+* For creating an ingress file and running it
+```sh
+nano ingress.yml
+kubectl get ingress ingress-reddit-app
+```
+Now the app can also be opened from curl -L <YOUR_DOMAIN_NAME>/<PATH_PREFIX> where domain name and path prefix are as specified by
+you in ingress.yml.
