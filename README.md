@@ -45,7 +45,7 @@ NodeJs To-do List app completely automated deployment using Jenkins, AWS EC2, Do
 ![screenshot-5](pics/p5.png)
 ![screenshot-6](pics/p6_service.png)
 ![screenshot-7](pics/p7_expose_port.png)
-![screenshot-8](pics/final_redit.png)
+![screenshot-8](pics/final_redit.jpg)
 ![screenshot-9](pics/p8_ingress_start.png)
 ![screenshot-10](pics/p9_ingress_working.png)
 
