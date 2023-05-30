@@ -1,5 +1,4 @@
 # reddit-clone-kubernetes-devops
-Reddit app clone deployment on Kubernetes with ingress, using AWS, Docker, and Kubernetes
 
 Configuration details: 
 1. **CI server EC2 instance name:** reddit-kubernetes-ci-server (t2.micro)
@@ -27,7 +26,7 @@ Configuration details:
 ## About The Project
 
 ### Description
-NodeJs To-do List app completely automated deployment using Jenkins, AWS EC2, Docker and GitHub CI/CD
+Deployed the Reddit app clone on Kubernetes cluster with ingress, using AWS and Docker. Provisioned two **AWS EC2** instances - CI server for building and pushing the **docker** image to docker hub, and Deployment server for deploying the app on **kubernetes** cluster and creating a service to expose it to the public internet. Also used **Ingress** for routing the traffic coming to the cluster IP to a domain name.
 
 ### Technologies used
 1. AWS EC2
