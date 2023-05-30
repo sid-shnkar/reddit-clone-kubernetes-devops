@@ -157,5 +157,5 @@ minikube addons enable ingress
 nano ingress.yml
 kubectl get ingress ingress-reddit-app
 ```
-Now the app can also be opened from ```sh curl -L <YOUR_DOMAIN_NAME>/<PATH_PREFIX> ``` where domain name and path prefix are as specified by
+Now the app can also be opened from ``` curl -L <YOUR_DOMAIN_NAME>/<PATH_PREFIX> ``` where domain name and path prefix are as specified by
 you in ingress.yml.
